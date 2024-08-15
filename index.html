@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="main">
+        <section class="accueil">
+            <nav>
+                <ul>
+                    <li><a href="#presentation">Présentation</a></li>
+                    <li><a href="#cv">Curriculum Vitae</a></li>
+                    <li>
+                        <a href="#stages" id="stage_font">Stages</a>
+                        <ul class="dropdown">
+                            <li><a href="#stage_premiere_annee">Première année</a></li>
+                            <li><a href="#stage_seconde_annee">Seconde année</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#act_pro">Activités Professionnelles</a></li>
+                    <li><a href="#projet_pro">Projets Professionnels</a></li>
+                </ul>
+            </nav>
+            <a href="./rachedi_jibril_tableau_synthese_e4.xlsx">
+                <button id="excel">Synthèse Excel</button>
+            </a>
+        </section>
+
+        <section class="presentation" id="presentation">
+            <div class="presentation-content">
+                <img src="./img/presentation_face.jpg" id="pdp">
+                <h2>Présentation</h2>
+                <p>Bienvenue sur mon portfolio ! Je suis passionné par le <br> développement web et la création
+                    d'expériences
+                    utilisateur.</p>
+                <p>J'ai une solide expérience dans la conception de sites web modernes et <br> réactifs, ainsi que dans
+                    l'intégration de fonctionnalités interactives.</p>
+            </div>
+        </section>
+
+        <section class="cv" id="cv">
+            <img id="cv_francais" src="./img/cv_francais.png">
+            <img id="cv_anglais" src="./img/cv_anglais.png">
+        </section>
+
+        <section class="stage_premiere_annee" id="stage_premiere_annee">
+            <div class="presentation-content">
+                <h2>ROYAL HAIR COIFFURE</h2>
+                <p>Pendant mon stage de première année, j'ai créé un site web pour un salon de coiffure. Mes tâches
+                    comprenaient la conception
+                    de l'interface, l'intégration des fonctionnalités comme la présentation des services et la prise de
+                    rendez-vous, ainsi que
+                    l'optimisation pour le référencement.</p>
+            </div>
+        </section>
+
+        <section class="stage_seconde_annee" id="stage_seconde_annee">
+            <div class="presentation-content">
+                <h2>SOITEC</h2>
+                <p>Pendant mon deuxième stage chez Soitec, j'ai développé un programme en JavaScript pour valider les
+                    fichiers Excel avant leur ajout
+                    au planning. Ce programme vérifiait plusieurs critères tels que la bonne date, l'absence de
+                    redondance, etc. Mon rôle consistait à
+                    concevoir et à implémenter cette solution pour optimiser le processus de planification.</p>
+            </div>
+        </section>
+
+        <section class="act_pro" id="act_pro">
+            <div class="presentation-content">
+                <h2>NUIT DE L'INFO</h2>
+                <p>Lors de la Nuit de l'Info, un événement où l'on code en équipe durant une nuit blanche, j'ai
+                    participé à la création d'un site web
+                    sur le thème de l'environnement. En parallèle, nous avons relevé des défis supplémentaires pour
+                    tenter de remporter des récompenses.
+                    Notre objectif était de concevoir un site fonctionnel et créatif tout en répondant aux exigences des
+                    défis proposés, dans un délai limité.</p>
+            </div>
+        </section>
+
+        <section class="projet_pro" id="projet_pro">
+            <div class="presentation-content">
+                <h2>PROJET PRO</h2>
+                <p>Mon objectif professionnel est de rejoindre l'EPSI pour suivre un Bachelor en développement et
+                    intelligence artificielle (IA), puis de poursuivre mes études
+                    à l'IDRAC pour obtenir les compétences nécessaires à la création et à la gestion d'une entreprise
+                    informatique. En combinant ces formations, je vise à acquérir
+                    une solide expertise technique en développement et en IA, ainsi que des compétences en gestion
+                    d'entreprise, me permettant ainsi de concrétiser mon ambition
+                    entrepreneuriale dans le domaine de l'informatique.</p>
+            </div>
+        </section>
+    </div>
+
+    <button onclick="scrollToTop()" class="back-to-top">Retour en haut</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('nav a').on('click', function (e) {
+                if (this.hash !== '') {
+                    e.preventDefault();
+                    const hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1000);
+                }
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <style>
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: orangered;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #ff6f00;
+        }
+    </style>
+
+</body>
+
+</html>
